@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "evetron", "src\evetron\evetron.njsproj", "{80E4454E-FBD0-492E-BE9B-678D1420DC77}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FCCAB9BF-0084-463A-828B-63D14B83F85A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7F742244-3A68-447D-9721-76887D9A1B7B}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\README.md = ..\..\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{CD56DA80-50C6-4A39-9736-F8632C59727E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80E4454E-FBD0-492E-BE9B-678D1420DC77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80E4454E-FBD0-492E-BE9B-678D1420DC77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80E4454E-FBD0-492E-BE9B-678D1420DC77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80E4454E-FBD0-492E-BE9B-678D1420DC77}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{80E4454E-FBD0-492E-BE9B-678D1420DC77} = {FCCAB9BF-0084-463A-828B-63D14B83F85A}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,5 @@
+﻿{
+  "ambientDevDependencies": {
+    "node": "github:DefinitelyTyped/DefinitelyTyped/blob/master/node/node.d.ts"
+  }
+}
