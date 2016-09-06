@@ -4,8 +4,8 @@
 let paths = {
     srcDir: './src/evetron',
     testsDir: './tests/evetron',
-    packDir : './pack/',
-    installBuilderDir : './dist/',
+    packDir: './pack/',
+    installBuilderDir: './dist/',
     appDir: `${(process.platform === 'darwin'
         ? 'Electron.app/Contents/Resources'
         : 'resources')}/app`,
@@ -14,7 +14,7 @@ let paths = {
     platformResourcesDir: `resources/${process.platform}`,
     ts: {
         src: '/scripts/**/*.ts'
-    },   
+    },
     scss: {
         src: '/sass/**/*.scss'
     },
@@ -181,7 +181,7 @@ gulp.task('watch:ts', function () {
 })
 
 gulp.task('watch:sass', function () {
-  gulp.watch(`${paths.srcDir}${paths.scss.src}`, ['compile:sass']);
+    gulp.watch(`${paths.srcDir}${paths.scss.src}`, ['compile:sass']);
 });
 
 gulp.task('watch:tests', function () {
@@ -279,7 +279,7 @@ gulp.task('clean:installer', function () {
     return del(paths.installBuilderDir);
 });
 
-gulp.task('installer', [ 'clean:installer', 'compile'], function () {
+gulp.task('installer', ['clean:installer', 'compile'], function () {
     return builder.build(installerOptions)
         .then(() => {
             console.log(`Installer for ${process.platform} created successfully.`)

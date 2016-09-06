@@ -1,102 +1,102 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Debug",
-            "type": "node",
-            "request": "launch",
-            "program": "${workspaceRoot}/src/evetron/scripts/main.ts",
-            "stopOnEntry": false,
-            "args": [],
-            "cwd": "${workspaceRoot}",
-            "preLaunchTask": "compile",
-            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
-            "runtimeArgs": [
-                "--enable-logging"
-            ],
-            "env": {},
-            "console": "integratedTerminal",
-            "sourceMaps": true,
-            "outDir": "${workspaceRoot}/src/evetron/bin/resources/app",
-            "windows": {
-                "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd",
-                "runtimeArgs": []
-            },
-            "osx": {
-                "outDir": "${workspaceRoot}/src/evetron/bin/Electron.app/Contents/Resources/app"
-            }
-        },
-        {
-            "name": "Attach",
-            "type": "node",
-            "request": "attach",
-            "port": 5858,
-            "address": "localhost",
-            "restart": false,
-            "sourceMaps": false,
-            "outDir": null,
-            "localRoot": "${workspaceRoot}",
-            "remoteRoot": null
-        },
-        {
-            "name": "Node Test",
-            "type": "node",
-            "request": "launch",
-            "program": "${workspaceRoot}/tests/evetron/scripts/node/main.ts",
-            "stopOnEntry": false,
-            "cwd": "${workspaceRoot}",
-            "preLaunchTask": "pretest",
-            "console": "internalConsole",
-            "sourceMaps": true,
-            "outDir": "${workspaceRoot}/tests/evetron/bin"
-        },
-        {
-            "name": "Mocha Test",
-            "type": "node",
-            "request": "launch",
-            "program": "${workspaceRoot}/tests/evetron/scripts/mocha/main.ts",
-            "stopOnEntry": false,
-            "cwd": "${workspaceRoot}",
-            "preLaunchTask": "pretest",
-            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/mocha",
-            "console": "internalConsole",
-            "sourceMaps": true,
-            "outDir": "${workspaceRoot}/tests/evetron/bin",
-            "windows": {
-                "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/mocha.cmd"
-            }
-        },
-        {
-            "name": "Mocha-Chai Test",
-            "type": "node",
-            "request": "launch",
-            "program": "${workspaceRoot}/tests/evetron/scripts/chai/main.ts",
-            "stopOnEntry": false,
-            "cwd": "${workspaceRoot}",
-            "preLaunchTask": "pretest",
-            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/mocha",
-            "console": "internalConsole",
-            "sourceMaps": true,
-            "outDir": "${workspaceRoot}/tests/evetron/bin",
-            "windows": {
-                "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/mocha.cmd"
-            }
-        },
-        {
-            "name": "Ava Test",
-            "type": "node",
-            "request": "launch",
-            "program": "${workspaceRoot}/tests/evetron/scripts/ava/main.ts",
-            "stopOnEntry": false,
-            "cwd": "${workspaceRoot}",
-            "preLaunchTask": "pretest",
-            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/ava",
-            "console": "internalConsole",
-            "sourceMaps": true,
-            "outDir": "${workspaceRoot}/tests/evetron/bin",
-            "windows": {
-                "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/ava.cmd"
-            }
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/src/evetron/scripts/main.ts",
+      "stopOnEntry": false,
+      "args": [],
+      "cwd": "${workspaceRoot}",
+      "preLaunchTask": "compile",
+      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
+      "runtimeArgs": [
+        "--enable-logging"
+      ],
+      "env": {},
+      "console": "integratedTerminal",
+      "sourceMaps": true,
+      "outDir": "${workspaceRoot}/src/evetron/bin/resources/app",
+      "windows": {
+        "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd",
+        "runtimeArgs": []
+      },
+      "osx": {
+        "outDir": "${workspaceRoot}/src/evetron/bin/Electron.app/Contents/Resources/app"
+      }
+    },
+    {
+      "name": "Attach",
+      "type": "node",
+      "request": "attach",
+      "port": 5858,
+      "address": "localhost",
+      "restart": false,
+      "sourceMaps": false,
+      "outDir": null,
+      "localRoot": "${workspaceRoot}",
+      "remoteRoot": null
+    },
+    {
+      "name": "Node Test",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/tests/evetron/scripts/node/main.ts",
+      "stopOnEntry": false,
+      "cwd": "${workspaceRoot}",
+      "preLaunchTask": "pretest",
+      "console": "internalConsole",
+      "sourceMaps": true,
+      "outDir": "${workspaceRoot}/tests/evetron/bin"
+    },
+    {
+      "name": "Mocha Test",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/tests/evetron/scripts/mocha/main.ts",
+      "stopOnEntry": false,
+      "cwd": "${workspaceRoot}",
+      "preLaunchTask": "pretest",
+      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/mocha",
+      "console": "internalConsole",
+      "sourceMaps": true,
+      "outDir": "${workspaceRoot}/tests/evetron/bin",
+      "windows": {
+        "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/mocha.cmd"
+      }
+    },
+    {
+      "name": "Mocha-Chai Test",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/tests/evetron/scripts/chai/main.ts",
+      "stopOnEntry": false,
+      "cwd": "${workspaceRoot}",
+      "preLaunchTask": "pretest",
+      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/mocha",
+      "console": "internalConsole",
+      "sourceMaps": true,
+      "outDir": "${workspaceRoot}/tests/evetron/bin",
+      "windows": {
+        "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/mocha.cmd"
+      }
+    },
+    {
+      "name": "Ava Test",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/tests/evetron/scripts/ava/main.ts",
+      "stopOnEntry": false,
+      "cwd": "${workspaceRoot}",
+      "preLaunchTask": "pretest",
+      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/ava",
+      "console": "internalConsole",
+      "sourceMaps": true,
+      "outDir": "${workspaceRoot}/tests/evetron/bin",
+      "windows": {
+        "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/ava.cmd"
+      }
+    }
+  ]
 }
