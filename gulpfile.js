@@ -156,14 +156,14 @@ gulp.task('compile', ['compile:ts', 'compile:sass', 'copy:html'], function () {
     return gulp.src(`${paths.srcDir}/package.prod.json`)
         .pipe(rename('package.json'))
         .pipe(gulp.dest(paths.destDir));
-})
+});
 
 gulp.task('build', ['compile'], function (cb) {
     return fs.copy(paths.electron_dist, paths.srcBinDir,
         new RegExp('^(?!.+default_app\.asar)'),
         cb
     );
-})
+});
 
 gulp.task('rebuild', function () {
     runsequence('clean', 'build');
@@ -174,11 +174,11 @@ gulp.task('rebuild', function () {
 
 gulp.task('watch:html', function () {
     return gulp.watch([`${paths.srcDir}${paths.html.src}`], ['copy:html']);
-})
+});
 
 gulp.task('watch:ts', function () {
     return gulp.watch([`${paths.srcDir}${paths.ts.src}`], ['compile:ts', 'tslint']);
-})
+});
 
 gulp.task('watch:sass', function () {
     gulp.watch(`${paths.srcDir}${paths.scss.src}`, ['compile:sass']);
@@ -282,11 +282,11 @@ gulp.task('clean:installer', function () {
 gulp.task('installer', ['clean:installer', 'compile'], function () {
     return builder.build(installerOptions)
         .then(() => {
-            console.log(`Installer for ${process.platform} created successfully.`)
+            console.log(`Installer for ${process.platform} created successfully.`);
         })
         .catch((error) => {
-            console.log(`Error: ${error.message}`)
-        })
+            console.log(`Error: ${error.message}`);
+        });
 });
 
 
