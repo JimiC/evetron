@@ -1,0 +1,8 @@
+{
+  "globalDevDependencies": {
+    "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts",
+    "electron": "github:DefinitelyTyped/DefinitelyTyped/github-electron/github-electron.d.ts",
+    "mocha": "github:DefinitelyTyped/DefinitelyTyped/mocha/mocha.d.ts",
+    "chai": "github:DefinitelyTyped/DefinitelyTyped/chai/chai.d.ts"
+  }
+}

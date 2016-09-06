@@ -3,17 +3,17 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <Name>evetron</Name>
-    <RootNamespace>evetron</RootNamespace>
-    <NodeExePath>$(SolutionDir)src\evetron\bin\electron.exe</NodeExePath>
+    <Name>packager</Name>
+    <RootNamespace>packager</RootNamespace>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>80e4454e-fbd0-492e-be9b-678d1420dc77</ProjectGuid>
+    <ProjectGuid>0fc7404b-7c43-4068-a538-c99ee392546c</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>bin\resources\app\main.js</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>
@@ -25,7 +25,7 @@
     <TypeScriptSourceMap>true</TypeScriptSourceMap>
     <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
     <EnableTypeScript>true</EnableTypeScript>
-    <StartWebBrowser>False</StartWebBrowser>
+    <StartWebBrowser>false</StartWebBrowser>
     <AnalysisIgnoredDirectories>node_modules</AnalysisIgnoredDirectories>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -35,20 +35,25 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="package.prod.json" />
-    <Content Include="static\css\main.css" />
-    <Content Include="static\html\mainWindow.html" />
-    <Content Include="tsconfig.json" />
-    <TypeScriptCompile Include="scripts\main.ts" />
-    <TypeScriptCompile Include="scripts\mainWindow.ts" />
-    <TypeScriptCompile Include="scripts\renderer.ts" />
-    <TypeScriptCompile Include="scripts\squirrelHandler.ts" />
+    <Folder Include="resources\" />
+    <Folder Include="resources\darwin\" />
+    <Folder Include="resources\linux\" />
+    <Folder Include="resources\linux\icons\" />
+    <Folder Include="resources\win32\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="scripts\" />
-    <Folder Include="static\" />
-    <Folder Include="static\css\" />
-    <Folder Include="static\html\" />
+    <Content Include="resources\darwin\evetron.plist" />
+    <Content Include="resources\darwin\icon.icns" />
+    <Content Include="resources\linux\icon.icns" />
+    <Content Include="resources\linux\icons\128x128.png" />
+    <Content Include="resources\linux\icons\16x16.png" />
+    <Content Include="resources\linux\icons\24x24.png" />
+    <Content Include="resources\linux\icons\256x256.png" />
+    <Content Include="resources\linux\icons\32x32.png" />
+    <Content Include="resources\linux\icons\48x48.png" />
+    <Content Include="resources\linux\icons\64x64.png" />
+    <Content Include="resources\linux\icons\96x96.png" />
+    <Content Include="resources\win32\icon.ico" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />

@@ -1,0 +1,14 @@
+﻿{
+  "name": "evetron",
+  "version": "0.0.1",
+  "repository": "https://github.com/JimiC/evetron",
+  "productName": "EVETron",
+  "description": "An EVE Monitoring Tool",
+  "copyright": "Copyright (C) 2016 EVETron Development Team.",
+  "author": {
+    "name": "EVETron Development Team",
+    "email": "devteam.evetron@gmail.com"
+  },
+  "license": "LGPL-3.0",
+  "main": "main.js"
+}

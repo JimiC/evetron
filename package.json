@@ -1,0 +1,43 @@
+{
+  "name": "evetron",
+  "version": "0.0.1",
+  "readme": "https://github.com/JimiC/evetron/blob/master/README.md",
+  "private": true,
+  "scripts": {
+    "preinstall": "npm i -g gulp",
+    "postinstall": "gulp install-typings",
+    "update": "gulp update-packages && npm update",
+    "build": "gulp rebuild",
+    "pack": "gulp package",
+    "dist": "gulp installer",
+    "pretest": "gulp pretest",
+    "test": "node ./tests/evetron/bin/node/main.js",
+    "test-mocha": "gulp pretest && mocha ./tests/evetron/bin/mocha/main.js",
+    "test-chai": "gulp pretest && mocha ./tests/evetron/bin/chai/main.js",
+    "test-ava": "gulp pretest && ava ./tests/evetron/bin/ava/main.js"
+  },
+  "devDependencies": {
+    "electron": "1.3.5",
+    "electron-builder": "6.4.0",
+    "electron-packager": "8.0.0",
+    "spectron": "3.3.0",
+    "ava": "0.16.0",
+    "mocha": "3.0.2",
+    "chai": "3.5.0",
+    "chai-as-promised": "5.3.0",
+    "del": "2.2.2",
+    "fs-extra": "0.30.0",
+    "run-sequence": "1.2.2",
+    "node-sass": "3.9.3",
+    "tslint": "3.15.1",
+    "typescript": "1.8.10",
+    "npm-check-updates": "2.8.0",
+    "gulp": "3.9.1",
+    "gulp-rename": "1.2.2",
+    "gulp-sourcemaps": "1.6.0",
+    "gulp-tslint": "6.1.1",
+    "gulp-typescript": "2.13.6",
+    "gulp-typings": "2.0.4",
+    "gulp-sass": "2.3.2"
+  }
+}

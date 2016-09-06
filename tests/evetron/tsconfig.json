@@ -1,7 +1,7 @@
 ﻿{
   "compileOnSave": true,
   "compilerOptions": {
-    "outDir": "bin/resources/app",
+    "outDir": "bin",
     "target": "es6",
     "module": "commonjs",
     "sourceMap": true,

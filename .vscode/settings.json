@@ -1,0 +1,13 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/.vs": true,
+        "**/node_modules": true,
+        "**/obj": true,
+        "**/*.njsproj": true,
+        "**/.ntvs_analysis.dat": true,
+        "*.sln": true
+    }
+}

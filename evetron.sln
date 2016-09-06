@@ -9,10 +9,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FCCAB9BF-008
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7F742244-3A68-447D-9721-76887D9A1B7B}"
 	ProjectSection(SolutionItems) = preProject
+		gulpfile.js = gulpfile.js
+		..\..\LICENSE = ..\..\LICENSE
+		package.json = package.json
 		..\..\README.md = ..\..\README.md
+		tslint.json = tslint.json
+		typings.json = typings.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{CD56DA80-50C6-4A39-9736-F8632C59727E}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "packager", "tools\packager\packager.njsproj", "{0FC7404B-7C43-4068-A538-C99EE392546C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{51845753-DD05-4E3E-B7A1-EC4485F390DE}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "tests", "tests\evetron\evetron.njsproj", "{BD8F26E5-4A49-4B78-B6F0-819421886C2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,11 +35,21 @@ Global
 		{80E4454E-FBD0-492E-BE9B-678D1420DC77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80E4454E-FBD0-492E-BE9B-678D1420DC77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80E4454E-FBD0-492E-BE9B-678D1420DC77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FC7404B-7C43-4068-A538-C99EE392546C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FC7404B-7C43-4068-A538-C99EE392546C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FC7404B-7C43-4068-A538-C99EE392546C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FC7404B-7C43-4068-A538-C99EE392546C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD8F26E5-4A49-4B78-B6F0-819421886C2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD8F26E5-4A49-4B78-B6F0-819421886C2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD8F26E5-4A49-4B78-B6F0-819421886C2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD8F26E5-4A49-4B78-B6F0-819421886C2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{80E4454E-FBD0-492E-BE9B-678D1420DC77} = {FCCAB9BF-0084-463A-828B-63D14B83F85A}
+		{0FC7404B-7C43-4068-A538-C99EE392546C} = {CD56DA80-50C6-4A39-9736-F8632C59727E}
+		{BD8F26E5-4A49-4B78-B6F0-819421886C2F} = {51845753-DD05-4E3E-B7A1-EC4485F390DE}
 	EndGlobalSection
 EndGlobal
