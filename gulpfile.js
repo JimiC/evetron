@@ -293,7 +293,7 @@ gulp.task('clean:installer', function () {
 
 gulp.task('installer', ['clean:installer', 'compile'], function () {
     return builder.build(installerOptions)
-        .then(function (){
+        .then(function () {
             console.log('Installer for ' + process.platform + ' created successfully.');
         })
         .catch(function (error) {
