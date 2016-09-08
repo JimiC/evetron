@@ -236,7 +236,7 @@ var packagerOptions = {
     //download: { cache: './' + paths.packagerDir + '/cache' },
     ignore: '.+\.map',
     out: paths.packDir,
-    icon: './' + paths.packagerDir + paths.iconPath,
+    icon: './' + paths.packagerDir + '/' + paths.iconPath,
     asar: true,
     overwrite: true,
     appVersion: packageJson.version,
@@ -248,7 +248,7 @@ var packagerOptions = {
         ProductName: packageJson.productName,
         OriginalFilename: packageJson.name + '.exe'
     },
-    extendInfo: './' + paths.packagerDir + paths.platformResourcesDir + '/evetron.plist'
+    extendInfo: './' + paths.packagerDir + '/' + paths.platformResourcesDir + '/evetron.plist'
 };
 
 gulp.task('clean:package', function () {
@@ -267,7 +267,7 @@ var installerOptions = {
         build: {
             win: {
                 // README: https://github.com/electron-userland/electron-builder/wiki/Options#buildwin
-                iconUrl: packageJson.repository + '/blob/master/' + paths.packagerDir + paths.iconPath + '.ico?raw=true'
+                iconUrl: packageJson.repository + '/blob/master/' + paths.packagerDir + '/' + paths.iconPath + '.ico?raw=true'
             },
             linux: {
                 // README: https://github.com/electron-userland/electron-builder/wiki/Multi-Platform-Build#linux
@@ -280,7 +280,7 @@ var installerOptions = {
             }
         },
         directories: {
-            buildResources: './' + paths.packagerDir + paths.platformResourcesDir,
+            buildResources: './' + paths.packagerDir + '/' + paths.platformResourcesDir,
             app: paths.destDir,
             output: paths.installBuilderDir
         }
