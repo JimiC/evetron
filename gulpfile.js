@@ -33,6 +33,8 @@ var gulp = require('gulp'),
     fs = require('fs-extra'),
     del = require('del'),
     runsequence = require('run-sequence'),
+    log = require('loglevel'),
+    chalk = require('chalk'),
     eslint = require('gulp-eslint'),
     tslint = require('gulp-tslint'),
     tsc = require('gulp-typescript'),
@@ -44,6 +46,7 @@ var gulp = require('gulp'),
     builder = require('electron-builder'),
     packageJson = require(paths.srcDir + '/package.prod.json');
 
+log.enableAll();
 
 /******* npm packages check ********/
 
@@ -51,8 +54,16 @@ gulp.task('check-packages-updates', function () {
     return ncu.run({
         packageFile: 'package.json',
     }).then(function (upgraded) {
-        console.log('Dependencies to upgrade:',
-            !Object.keys(upgraded).length ? 'None' : upgraded);
+        var str = 'None';
+        if (Object.keys(upgraded).length) {
+            str = '';
+            for (var upgrade in upgraded) {
+                str += '\n';
+                str += '    - ' + upgrade + ' : ' + upgraded[upgrade];
+            }
+        }
+
+        log.info('Dependencies to upgrade: %s', str);
     });
 });
 
@@ -294,10 +305,10 @@ gulp.task('clean:installer', function () {
 gulp.task('installer', ['clean:installer', 'compile'], function () {
     return builder.build(installerOptions)
         .then(function () {
-            console.log('Installer for ' + process.platform + ' created successfully.');
+            log.info(chalk.green('Installer for ' + process.platform + ' created successfully.'));
         })
         .catch(function (error) {
-            console.log('Error: ' + error.message);
+            log.error(chalk.red('Error: ' + error.message));
         });
 });
 
