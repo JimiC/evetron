@@ -29,6 +29,7 @@ paths.destDir = paths.srcBinDir + '/' + paths.appDir;
 paths.iconPath = paths.platformResourcesDir + '/icon';
 
 var gulp = require('gulp'),
+    util = require('util'),
     ncu = require('npm-check-updates'),
     fs = require('fs-extra'),
     del = require('del'),
@@ -59,7 +60,7 @@ gulp.task('check-packages-updates', function () {
             str = '';
             for (var upgrade in upgraded) {
                 str += '\n';
-                str += '    - ' + upgrade + ' : ' + upgraded[upgrade];
+                str += util.format('    - %s : %s', upgrade, upgraded[upgrade]);
             }
         }
 
@@ -147,9 +148,10 @@ gulp.task('compile:sass', ['clean:css'], function () {
         .pipe(sass().on('error', sass.logError))
         .pipe(sourcemaps.write('.', {
             includeContent: false,
-            sourceRoot: (process.platform === 'darwin'
-                ? '../../../../../'
-                : '../../../') + 'sass/'
+            sourceRoot: util.format('../../../%s/sass/',
+                process.platform === 'darwin'
+                    ? '../..'
+                    : '')
         }))
         .pipe(gulp.dest(paths.destDir));
 });
@@ -165,9 +167,10 @@ gulp.task('compile:ts', ['clean:js'], function () {
         .pipe(tsc(tscProject))
         .pipe(sourcemaps.write('.', {
             includeContent: false,
-            sourceRoot: (process.platform === 'darwin'
-                ? '../../../../../'
-                : '../../../') + 'scripts/'
+            sourceRoot: util.format('../../../%s/scripts/',
+                process.platform === 'darwin'
+                    ? '../..'
+                    : '')
         }))
         .pipe(gulp.dest(paths.destDir));
 });
@@ -244,10 +247,10 @@ var packagerOptions = {
     arch: 'x64',
     name: packageJson.name,
     //version: packageJson.devDependencies['electron-prebuilt'],
-    //download: { cache: './' + paths.packagerDir + '/cache' },
+    //download: { cache: util.format('./%s/cache', paths.packagerDir)},
     ignore: '.+\.map',
     out: paths.packDir,
-    icon: './' + paths.packagerDir + '/' + paths.iconPath,
+    icon: util.format('./%s/%s', paths.packagerDir, paths.iconPath),
     asar: true,
     overwrite: true,
     appVersion: packageJson.version,
@@ -259,7 +262,7 @@ var packagerOptions = {
         ProductName: packageJson.productName,
         OriginalFilename: packageJson.name + '.exe'
     },
-    extendInfo: './' + paths.packagerDir + '/' + paths.platformResourcesDir + '/evetron.plist'
+    extendInfo: util.format('./%s/%s/evetron.plist', paths.packagerDir, paths.platformResourcesDir)
 };
 
 gulp.task('clean:package', function () {
@@ -278,7 +281,7 @@ var installerOptions = {
         build: {
             win: {
                 // README: https://github.com/electron-userland/electron-builder/wiki/Options#buildwin
-                iconUrl: packageJson.repository + '/blob/master/' + paths.packagerDir + '/' + paths.iconPath + '.ico?raw=true'
+                iconUrl: util.format('%s/blob/master/%s/%s.ico?raw=true', packageJson.repository, paths.packagerDir, paths.iconPath)
             },
             linux: {
                 // README: https://github.com/electron-userland/electron-builder/wiki/Multi-Platform-Build#linux
@@ -291,7 +294,7 @@ var installerOptions = {
             }
         },
         directories: {
-            buildResources: './' + paths.packagerDir + '/' + paths.platformResourcesDir,
+            buildResources: util.format('./%s/%s', paths.packagerDir, paths.platformResourcesDir),
             app: paths.destDir,
             output: paths.installBuilderDir
         }
@@ -305,10 +308,10 @@ gulp.task('clean:installer', function () {
 gulp.task('installer', ['clean:installer', 'compile'], function () {
     return builder.build(installerOptions)
         .then(function () {
-            log.info(chalk.green('Installer for ' + process.platform + ' created successfully.'));
+            log.info(chalk.green('Installer for %s created successfully.'), process.platform);
         })
         .catch(function (error) {
-            log.error(chalk.red('Error: ' + error.message));
+            log.error(chalk.red('Error: %s'), error.message);
         });
 });
 
