@@ -164,7 +164,7 @@ gulp.task('compile:ts', ['clean:js'], function () {
 
     return tscProject.src()
         .pipe(sourcemaps.init())
-        .pipe(tsc(tscProject))
+        .pipe(tscProject())
         .pipe(sourcemaps.write('.', {
             includeContent: false,
             sourceRoot: util.format('../../../%s/scripts/',
@@ -226,7 +226,7 @@ gulp.task('compile-tests', ['clean-tests'], function () {
 
     return tscProject.src()
         .pipe(sourcemaps.init())
-        .pipe(tsc(tscProject))
+        .pipe(tscProject())
         .pipe(sourcemaps.write('.', {
             includeContent: false,
             sourceRoot: '../../scripts/'
