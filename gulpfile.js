@@ -281,7 +281,8 @@ var installerOptions = {
         build: {
             win: {
                 // README: https://github.com/electron-userland/electron-builder/wiki/Options#buildwin
-                iconUrl: util.format('%s/blob/master/%s/%s.ico?raw=true', packageJson.repository, paths.packagerDir, paths.iconPath)
+                iconUrl: util.format('%s/blob/master/%s/%s.ico?raw=true',
+                    packageJson.repository, paths.packagerDir, paths.iconPath)
             },
             linux: {
                 // README: https://github.com/electron-userland/electron-builder/wiki/Multi-Platform-Build#linux

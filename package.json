@@ -4,7 +4,6 @@
   "readme": "https://github.com/JimiC/evetron/blob/master/README.md",
   "private": true,
   "scripts": {
-    "preinstall": "npm i -g gulp",
     "postinstall": "gulp install-typings",
     "update": "gulp update-packages && npm update",
     "build": "gulp rebuild",
