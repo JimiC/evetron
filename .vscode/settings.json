@@ -9,5 +9,6 @@
     "**/*.njsproj": true,
     "**/.ntvs_analysis.dat": true,
     "*.sln": true
-  }
+  },
+  "typescript.tsdk": "./node_modules/typescript/lib"
 }
