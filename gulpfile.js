@@ -41,7 +41,6 @@ var gulp = require('gulp'),
     tsc = require('gulp-typescript'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
-    typings = require('gulp-typings'),
     rename = require('gulp-rename'),
     packager = require('electron-packager'),
     builder = require('electron-builder'),
@@ -74,15 +73,6 @@ gulp.task('update-packages', function () {
         upgrade: true,
         loglevel: 'warn'
     });
-});
-
-
-/******* typings ********/
-
-gulp.task('install-typings', function () {
-    return gulp.src('./typings.json')
-        .pipe(typings())
-        .pipe(gulp.dest('.'));
 });
 
 
@@ -186,7 +176,9 @@ gulp.task('compile', ['compile:ts', 'compile:sass', 'copy:html'], function () {
 
 gulp.task('build', ['compile'], function (cb) {
     return fs.copy(paths.electronDist, paths.srcBinDir,
-        new RegExp('^(?!.+default_app\.asar)'),
+        function (paths) {
+            return paths.match('^(?!.+default_app\.asar)');
+        },
         cb
     );
 });

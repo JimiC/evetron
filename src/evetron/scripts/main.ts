@@ -1,5 +1,4 @@
-﻿/// <reference path="../../../typings/index.d.ts" />
-'use strict';
+﻿'use strict';
 
 import { MainWindow } from './mainWindow';
 import { SquirrelHandler } from './squirrelHandler';
@@ -8,7 +7,7 @@ class Program {
 
     /**
      * The main entry point.
-     * 
+     *
      * @static
      */
     public static main(): void {

@@ -1,6 +1,4 @@
-﻿/// <reference path="../../../../typings/index.d.ts" />
-
-// A mocha test to verify that it shows an initial window
+﻿// A mocha test to verify that it shows an initial window
 import assert = require('assert');
 
 let Application = require('spectron').Application;

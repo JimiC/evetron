@@ -1,6 +1,4 @@
-﻿/// <reference path="../../../../typings/index.d.ts" />
-
-// A simple test to verify a visible window is opened with a title
+﻿// A simple test to verify a visible window is opened with a title
 import assert = require('assert');
 
 let Application = require('spectron').Application;
@@ -26,7 +24,7 @@ app.start().then(() => {
     // Verify the window is visible
     assert.equal(isVisible, true);
 }).then(() => {
-    // Get the window's title 
+    // Get the window's title
     return app.browserWindow.getTitle();
 }).then((title: String) => {
     // Verify the window's title

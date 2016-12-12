@@ -12,8 +12,11 @@
     "removeComments": false,
     "noImplicitAny": true,
     "preserveConstEnums": true,
-    "noEmitOnError": true
-  },
+    "noEmitOnError": true,
+     "typeRoots": [
+      "node_modules/@types"
+    ]
+ },
   "exclude": [
     "node_modules",
     "bin"

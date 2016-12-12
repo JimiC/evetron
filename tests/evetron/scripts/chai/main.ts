@@ -1,5 +1,3 @@
-/// <reference path="../../../../typings/index.d.ts" />
-
 // A mocha and chai test to verify that it opens a window
 import chai = require('chai');
 

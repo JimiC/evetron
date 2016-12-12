@@ -1,5 +1,3 @@
-/// <reference path="../../../../typings/index.d.ts" />
-
 // An ava test to verify that it opens a window
 import ava from 'ava';
 
